@@ -13,7 +13,7 @@ class AirlaneController extends Controller
      */
     public function index()
     {
-        //
+        return Airlane::all();
     }
 
     /**
@@ -29,7 +29,9 @@ class AirlaneController extends Controller
      */
     public function store(StoreAirlaneRequest $request)
     {
-        //
+        $record = new Airlane();
+        $record->fill($request->all())->save();
+        
     }
 
     /**
@@ -37,7 +39,7 @@ class AirlaneController extends Controller
      */
     public function show(Airlane $airlane)
     {
-        //
+        return Airlane::find($airlane);
     }
 
     /**
@@ -53,7 +55,7 @@ class AirlaneController extends Controller
      */
     public function update(UpdateAirlaneRequest $request, Airlane $airlane)
     {
-        //
+        $airlane->fill($request->all())->save();
     }
 
     /**

@@ -13,7 +13,7 @@ class FlightController extends Controller
      */
     public function index()
     {
-        //
+        return Flight::all();
     }
 
     /**
@@ -29,7 +29,9 @@ class FlightController extends Controller
      */
     public function store(StoreFlightRequest $request)
     {
-        //
+        $record = new Flight();
+        $record->fill($request->all())->save();
+        
     }
 
     /**
