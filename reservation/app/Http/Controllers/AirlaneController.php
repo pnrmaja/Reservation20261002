@@ -29,9 +29,7 @@ class AirlaneController extends Controller
      */
     public function store(StoreAirlaneRequest $request)
     {
-        $record = new Airlane();
-        $record->fill($request->all())->save();
-        
+        return Airlane::create($request->all());
     }
 
     /**
@@ -63,6 +61,6 @@ class AirlaneController extends Controller
      */
     public function destroy(Airlane $airlane)
     {
-        //
+        $airlane->delete();
     }
 }
