@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Airlane;
 use App\Models\Flight;
+use App\Models\Travel;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -19,7 +20,8 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(10)->create();
         Airlane::factory(10)->create();
-        Flight::factory()->create();
+        Flight::factory(10)->create();
+        Travel::factory(10)->create();
 
        /*  User::factory()->create([
             'name' => 'Test User',
